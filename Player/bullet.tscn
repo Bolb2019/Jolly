@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://cbglxkcq0kxs"]
+
+[ext_resource type="Script" uid="uid://7m1ugrmtfhwb" path="res://Player/gpu_particles_3d.gd" id="1_kxw81"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_tqmay"]
+direction = Vector3(0, 1, 0)
+spread = 0.0
+initial_velocity_min = 40.0
+initial_velocity_max = 40.0
+gravity = Vector3(0, 0, 0)
+sub_emitter_mode = 3
+sub_emitter_amount_at_collision = 32
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_d7yj7"]
+radius = 0.25
+height = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ggrph"]
+transparency = 1
+vertex_color_use_as_albedo = true
+
+[sub_resource type="Gradient" id="Gradient_fdgrx"]
+offsets = PackedFloat32Array(0, 0.4827586, 1)
+colors = PackedColorArray(0.56128013, 0.19000018, 0.019704103, 1, 0.50243545, 0.49147254, 0.11394236, 0.51724136, 0.43874782, 0.36608014, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_vouaq"]
+gradient = SubResource("Gradient_fdgrx")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7knge"]
+spread = 180.0
+initial_velocity_min = 5.0
+initial_velocity_max = 5.0
+gravity = Vector3(0, 0, 0)
+color = Color(0.9999998, 0.63589114, 0.33576643, 1)
+color_ramp = SubResource("GradientTexture1D_vouaq")
+hue_variation_min = -2.2351742e-08
+hue_variation_max = -2.2351742e-08
+
+[sub_resource type="SphereMesh" id="SphereMesh_ki1tx"]
+radius = 0.25
+height = 0.5
+
+[node name="Bullet" type="Node3D" unique_id=1337753415]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=2014794207]
+transform = Transform3D(-1, -8.742278e-08, 0, -3.821371e-15, 4.371139e-08, -1, 8.742278e-08, -1, -4.371139e-08, 0.050824016, 0.006224215, -0.47260115)
+emitting = false
+amount = 1
+sub_emitter = NodePath("../GPUParticles3D2")
+lifetime = 3.0
+one_shot = true
+speed_scale = 6.0
+process_material = SubResource("ParticleProcessMaterial_tqmay")
+draw_pass_1 = SubResource("CapsuleMesh_d7yj7")
+script = ExtResource("1_kxw81")
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="." unique_id=455119960]
+transform = Transform3D(1, 0, 0, 0, 0.9659254, 0.25881886, 0, -0.25881886, 0.9659254, 0.050824016, 0.006575346, -0.47129014)
+material_override = SubResource("StandardMaterial3D_ggrph")
+emitting = false
+amount = 52
+lifetime = 0.7
+one_shot = true
+preprocess = 1.0
+speed_scale = 4.0
+explosiveness = 0.8
+process_material = SubResource("ParticleProcessMaterial_7knge")
+draw_pass_1 = SubResource("SphereMesh_ki1tx")

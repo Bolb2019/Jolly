@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://bdjy81kmxle8n"]
+
+[ext_resource type="Script" uid="uid://dkjnwh8jqb8js" path="res://Jolly/jolly.gd" id="1_hfoce"]
+[ext_resource type="Texture2D" uid="uid://x37nlimfam3k" path="res://Jolly/image.png" id="1_oognw"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_avg03"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_oognw"]
+viewport_path = NodePath("SubViewport")
+
+[node name="Jolly" type="CharacterBody3D" unique_id=215259859]
+script = ExtResource("1_hfoce")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1633590498]
+shape = SubResource("CapsuleShape3D_avg03")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1358477005]
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=987324446]
+size = Vector2i(650, 649)
+
+[node name="Image" type="Sprite2D" parent="SubViewport" unique_id=396592094]
+position = Vector2(326.5, 326.5)
+scale = Vector2(1.2714844, 1.2714844)
+texture = ExtResource("1_oognw")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=240173365]
+transform = Transform3D(0.2973806, 0, 0, 0, 0.2973806, 0, 0, 0, 1, 0, 0.15142643, 0)
+texture = SubResource("ViewportTexture_oognw")
