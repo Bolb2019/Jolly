@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://x37nlimfam3k" path="res://Jolly/image.png" id="1_oognw"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_avg03"]
+radius = 0.8149414
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_oognw"]
 viewport_path = NodePath("SubViewport")

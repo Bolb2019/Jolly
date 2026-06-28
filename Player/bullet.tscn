@@ -8,10 +8,15 @@ spread = 0.0
 initial_velocity_min = 40.0
 initial_velocity_max = 40.0
 gravity = Vector3(0, 0, 0)
+color = Color(0.1728327, 0.17283267, 0.17283267, 1)
 sub_emitter_mode = 3
 sub_emitter_amount_at_collision = 32
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kxw81"]
+vertex_color_use_as_albedo = true
+
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_d7yj7"]
+material = SubResource("StandardMaterial3D_kxw81")
 radius = 0.25
 height = 1.0
 
@@ -36,7 +41,12 @@ color_ramp = SubResource("GradientTexture1D_vouaq")
 hue_variation_min = -2.2351742e-08
 hue_variation_max = -2.2351742e-08
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tqmay"]
+transparency = 1
+vertex_color_use_as_albedo = true
+
 [sub_resource type="SphereMesh" id="SphereMesh_ki1tx"]
+material = SubResource("StandardMaterial3D_tqmay")
 radius = 0.25
 height = 0.5
 
@@ -54,7 +64,7 @@ process_material = SubResource("ParticleProcessMaterial_tqmay")
 draw_pass_1 = SubResource("CapsuleMesh_d7yj7")
 script = ExtResource("1_kxw81")
 
-[node name="GPUParticles3D2" type="GPUParticles3D" parent="." unique_id=455119960]
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="." unique_id=842790419]
 transform = Transform3D(1, 0, 0, 0, 0.9659254, 0.25881886, 0, -0.25881886, 0.9659254, 0.050824016, 0.006575346, -0.47129014)
 material_override = SubResource("StandardMaterial3D_ggrph")
 emitting = false

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://micgwbpw0qyy"]
 
-[ext_resource type="Script" uid="uid://cdjsmcwkjr0ro" path="res://Player/Player.gd" id="1_btcbx"]
+[ext_resource type="Script" uid="uid://di0bh3th54h4q" path="res://Player/Player.gd" id="1_btcbx"]
 [ext_resource type="Script" uid="uid://078te8i5aq6m" path="res://grappling_hook_3d/src/hook_controller.gd" id="2_yq2dk"]
 [ext_resource type="Texture2D" uid="uid://cskw882fffi36" path="res://grappling_hook_3d/example/hook_availible.png" id="3_k3ota"]
 
@@ -46,6 +46,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
 [node name="Hook Raycast" type="RayCast3D" parent="Camera" unique_id=2116770607]
 target_position = Vector3(0, 0, -50)
+collide_with_areas = true
 
 [node name="Gun Raycast" type="RayCast3D" parent="Camera" unique_id=1370576649]
 target_position = Vector3(0, 0, -100)
