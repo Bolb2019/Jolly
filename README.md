@@ -1,4 +1,4 @@
-# Jolly
+# Jolly-Annihilator
 meeeooww
 
 Time to pet Jolly, with Bullets, oh and also a grappling hook cause why the heck not
